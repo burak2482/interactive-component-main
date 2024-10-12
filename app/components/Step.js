@@ -1,4 +1,4 @@
-export default function Step({ isSubmitted, currentStep, handleStepAdder, handleSubmitted }) {
+export default function Step({ isSubmitted, setSubmitted, currentStep, setCurrentStep }) {
   
   function handleStepAdder() {
     if (currentStep < 5) {
