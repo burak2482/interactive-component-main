@@ -10,7 +10,7 @@ export default function Step({ isSubmitted, setSubmitted, currentStep, setCurren
 
   return (
     <>
-    <section class=`flex justify-between items-center`>
+    <section class="flex justify-between items-center">
       <div class={`px-6 py-3 w-1 ${currentStep === 1 ? `bg-customOrange` : (currentStep - 1 === 1 ? `bg-white text-black` : `bg-slate-600 text-white`)} rounded-full flex justify-center items-center text-semibold`}>1</div>
       <div class={`px-6 py-3 w-1 ${currentStep === 2 ? `bg-customOrange` : (currentStep - 1 === 2 ? `bg-white text-black` : `bg-slate-600 text-white`)} rounded-full flex justify-center items-center text-semibold`}>2</div>
       <div class={`px-6 py-3 w-1 ${currentStep === 3 ? `bg-customOrange` : (currentStep - 1 === 3 ? `bg-white text-black` : `bg-slate-600 text-white`)} rounded-full flex justify-center items-center text-semibold`}>3</div>
