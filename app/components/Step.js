@@ -30,10 +30,10 @@ export default function Step({ isSubmitted, setSubmitted, currentStep, setCurren
         </div>
     </section>
       <div className="flex items-center justify-center mt-8">
-        <button onClick={handleStepAdder} className="bg-white text-bold text-2xl px-14 rounded-3xl mr-3 hover:bg-customGrey hover:text-white">
+        <button onClick={handleStepAdder} className="bg-white text-bold text-2xl px-14 rounded-3xl mr-3 md:px-8 hover:bg-customGrey hover:text-white">
           NEXT
         </button>
-        <button onClick={handleSubmitted} className="bg-customOrange text-bold text-2xl px-12 rounded-3xl hover:bg-yellow-500">
+        <button onClick={handleSubmitted} className="bg-customOrange text-bold text-2xl px-12 rounded-3xl md:px-8 md:text-xl hover:bg-yellow-500">
           SUBMIT
         </button>
       </div>
