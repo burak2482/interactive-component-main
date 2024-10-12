@@ -1,5 +1,5 @@
-export default function Step({ isSubmitted, setSubmitted, currentStep, setCurrentStep }) {
-
+export default function Step({ isSubmitted, currentStep, handleStepAdder, handleSubmitted }) {
+  
   function handleStepAdder() {
     if (currentStep < 5) {setCurrentStep(currentStep + 1) };
   }
@@ -7,24 +7,27 @@ export default function Step({ isSubmitted, setSubmitted, currentStep, setCurren
   function handleSubmitted() {
     setSubmitted(!isSubmitted);
   }
+  
+  return (
+    <>
+      <section className="flex justify-between items-center">
+        <div className={`px-6 py-3 w-1 ${currentStep === 4 ? 'bg-customOrange' : (currentStep - 1 === 4 ? 'bg-white text-black' : 'bg-slate-600 text-white')} rounded-full flex justify-center items-center text-semibold`}>
+          4
+        </div>
+        <div className={`px-6 py-3 w-1 ${currentStep === 5 ? 'bg-customOrange' : (currentStep - 1 === 5 ? 'bg-white text-black' : 'bg-slate-600 text-white')} rounded-full flex justify-center items-center text-semibold`}>
+          5
+        </div>
+      </section>
+      <div className="flex items-center justify-center mt-8">
+        <button onClick={handleStepAdder} className="bg-white text-bold text-2xl px-14 rounded-3xl mr-3 hover:bg-customGrey hover:text-white">
+          NEXT
+        </button>
+        <button onClick={handleSubmitted} className="bg-customOrange text-bold text-2xl px-12 rounded-3xl hover:bg-yellow-500">
+          SUBMIT
+        </button>
+      </div>
+    </>
+  );
+}
 
-return (
-  <>
-    <section className="flex justify-between items-center">
-      <div className={`px-6 py-3 w-1 ${currentStep === 4 ? 'bg-customOrange' : (currentStep - 1 === 4 ? 'bg-white text-black' : 'bg-slate-600 text-white')} rounded-full flex justify-center items-center text-semibold`}>
-        4
-      </div>
-      <div className={`px-6 py-3 w-1 ${currentStep === 5 ? 'bg-customOrange' : (currentStep - 1 === 5 ? 'bg-white text-black' : 'bg-slate-600 text-white')} rounded-full flex justify-center items-center text-semibold`}>
-        5
-      </div>
-    </section>
-    <div className="flex items-center justify-center mt-8">
-      <button onClick={handleStepAdder} className="bg-white text-bold text-2xl px-14 rounded-3xl mr-3 hover:bg-customGrey hover:text-white">
-        NEXT
-      </button>
-      <button onClick={handleSubmitted} className="bg-customOrange text-bold text-2xl px-12 rounded-3xl hover:bg-yellow-500">
-        SUBMIT
-      </button>
-    </div>
-  </>
-);
+
