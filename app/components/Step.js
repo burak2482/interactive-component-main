@@ -1,7 +1,9 @@
 export default function Step({ isSubmitted, currentStep, handleStepAdder, handleSubmitted }) {
   
   function handleStepAdder() {
-    if (currentStep < 5) {setCurrentStep(currentStep + 1) };
+    if (currentStep < 5) {
+      setCurrentStep(currentStep + 1);
+    }
   }
 
   function handleSubmitted() {
